@@ -3,6 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun --watch src/index.ts --config config.yaml"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

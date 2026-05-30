@@ -1,11 +1,12 @@
 service:
-  workers: 4
+  workers: 2
   listen: 8080
   upstreams:
     - id: app
       strategy: round-robin
       servers:
-        - https://jsonplaceholder.typicode.com
+        - https://jsonplaceholder.typicode.com/todos
+        - https://www.npmjs.com/package/yaml
   headers:
     x-forword-for: $ip
     x-forword-host: $host
