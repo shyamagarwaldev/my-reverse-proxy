@@ -1,0 +1,14 @@
+service:
+  workers: 4
+  listen: 8080
+  upstreams:
+    - id: app
+      strategy: round-robin
+      servers:
+        - https://jsonplaceholder.typicode.com
+  headers:
+    x-forword-for: $ip
+    x-forword-host: $host
+  rules:
+    - path: /
+      upstream: app
